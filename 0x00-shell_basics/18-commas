@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -aFm
+ls -amF --file-type
