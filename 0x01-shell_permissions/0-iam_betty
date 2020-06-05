@@ -1,2 +1,2 @@
 #!/bin/bash
-uid betty
+su betty
