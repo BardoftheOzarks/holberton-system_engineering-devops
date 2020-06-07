@@ -1,0 +1,2 @@
+#!/bin/bash
+fprint() "Hello, World"
