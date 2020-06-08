@@ -1,2 +1,2 @@
 #!/bin/bash
-find /* -type d | wc -l
+echo $(find . -type d -wholename "./*") | wc -w
