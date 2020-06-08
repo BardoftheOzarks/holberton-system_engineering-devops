@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -AdR1 | wc -l
+find -AdR1 | wc -l
