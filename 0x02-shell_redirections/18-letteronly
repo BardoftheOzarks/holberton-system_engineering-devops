@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -e {a..z}*
+grep -e ^{A..z}
