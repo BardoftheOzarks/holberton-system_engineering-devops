@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -e ^{A..z}
+grep -vw ^{0-9}
