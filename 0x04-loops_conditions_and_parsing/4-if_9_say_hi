@@ -5,8 +5,7 @@ while [ $i -le 10 ]; do
     if [ $i -eq 9 ]
     then
 	echo "Hi"
-    else
-	echo "Holberton School"
     fi
+    echo "Holberton School"
     let i=i+1
 done
