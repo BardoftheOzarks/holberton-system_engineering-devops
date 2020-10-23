@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 # Retrieves info on file "holbertonschool"
-if [ -e "holbertonschool" ]
+f="holbertonschool"
+if [ -e $f ]
 then
-	echo "holbertonschool file exists"
-	if [ -s "holbertonschool" ]
+	echo "$f file exists"
+	if [ -s $f ]
 	then
-		echo "holbertonschool file is not empty"
+		echo "$f file is not empty"
 	else
-		echo "holbertonschool file is empty"
+		echo "$f file is empty"
 	fi
-	if [ ! -d "holbertonschool" ]
+	if [ -f $f ]
 	then
-		echo "holbertonschool is regular file"
+		echo "$f is regular file"
 	fi
 else
-	echo "holbertonschool file does not exist"
+	echo "$f file does not exist"
 fi
