@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # Retrieves info on file "holbertonschool"
 f="holbertonschool"
-if [ -e $f ]
+if [ -e $f ];
 then
 	echo "$f file exists"
-	if [ -s $f ]
+	if [ -s $f ];
 	then
 		echo "$f file is not empty"
 	else
 		echo "$f file is empty"
 	fi
-	if [ -f $f ]
+	if [ -f $f ];
 	then
 		echo "$f is regular file"
 	fi
