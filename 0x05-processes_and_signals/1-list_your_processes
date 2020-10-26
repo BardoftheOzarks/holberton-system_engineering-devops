@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# prints a list of all processes in user-oriented format with hierarchy
+ps faux
