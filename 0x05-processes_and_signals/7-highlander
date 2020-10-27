@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Displays "To infinity and beyond" infinitely
 trap "echo 'I am invincible!!!'" SIGTERM
-while [ true ]
+while true
 do
 	echo "To inifinity and beyond"
 	sleep 2
