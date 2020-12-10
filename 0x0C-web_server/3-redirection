@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Installs nginx on a web server and add a redirect
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo echo "Holberton School" > /var/www/html/index.html
+sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=HPk-VhRjNI8&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=1 permanent;" /etc/nginx/sites-available/default
+sudo service nginx start
