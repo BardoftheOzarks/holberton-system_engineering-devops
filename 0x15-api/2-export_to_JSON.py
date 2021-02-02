@@ -18,7 +18,7 @@ if __name__ == "__main__":
         task_dict["completed"] = task.get('completed')
         task_dict["username"] = "{}".format(username)
         todo_list.append(task_dict)
-    user_dict = {argv[1] : todo_list}
+    user_dict = {argv[1]: todo_list}
 
     with open('{}.json'.format(argv[1]), 'w') as file:
         file.write(dumps(user_dict))
