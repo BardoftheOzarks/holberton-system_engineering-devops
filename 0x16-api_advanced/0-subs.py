@@ -2,6 +2,8 @@
 '''
 Returns number of subscribers for a specific subreddit
 '''
+
+
 def number_of_subscribers(subreddit):
     from requests import get
     headers = {'user-agent': 'user', 'allow_redirect': 'FALSE'}
@@ -9,6 +11,6 @@ def number_of_subscribers(subreddit):
     data = get(URL, headers=headers).json()
     subdata = data.get('data')
     subscribers = subdata.get('subscribers')
-    if subscribers is None:
+    if type(subscribers) is not int:
         return 0
     return subscribers
