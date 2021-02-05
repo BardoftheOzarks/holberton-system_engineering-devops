@@ -30,10 +30,10 @@ def count_words(subreddit, word_list):
     word_list = format_words(word_list)
     if hot_list is None:
         return
-    elif hot_list:
-        print_counts(hot_list, word_list)
-    else:
+    elif word_list is None and hot_list is None:
         count_words(subreddit, word_list)
+    else:
+        print_counts(hot_list, word_list)
 
 
 def format_words(word_list):
