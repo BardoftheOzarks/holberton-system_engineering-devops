@@ -7,7 +7,7 @@ Returns top ten posts for a specific subreddit
 def top_ten(subreddit):
     from requests import get
     headers = {'user-agent': 'user'}
-    URL = 'https://www.reddit.com/r/{}/top/.json'.format(subreddit)
+    URL = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
     data = get(URL, headers=headers, allow_redirects=False)
     if data.status_code is not 200:
         print('None')
