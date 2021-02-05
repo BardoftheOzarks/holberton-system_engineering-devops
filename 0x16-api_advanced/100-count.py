@@ -49,8 +49,9 @@ def print_counts(hot_list, word_list):
     for word in word_list:
         count = 0
         for entry in hot_list:
-            if word in entry.lower().split():
-                count += 1
+            entry_words = entry.lower().split()
+            if word in entry_words:
+                count += entry_words.count(word)
         if word in counts:
             counts[word] += count
         else:
