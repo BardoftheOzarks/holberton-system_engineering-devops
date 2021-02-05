@@ -55,6 +55,7 @@ def print_counts(hot_list, word_list):
             counts[word] += count
         else:
             counts[word] = count
-    for key, val in sorted(counts.items()):
+    for key, val in sorted(counts.items(),
+                           key=lambda item: (-item[1], item[0])):
         if val > 0:
             print('{}: {}'.format(key, val))
