@@ -39,8 +39,7 @@ def count_words(subreddit, word_list):
 def format_words(word_list):
     new_list = []
     for word in word_list:
-        if word.lower() not in new_list:
-            new_list.append(word.lower())
+        new_list.append(word.lower())
     return new_list
 
 
