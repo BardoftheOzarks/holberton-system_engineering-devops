@@ -1,6 +1,11 @@
 # Configures SSH to connect without a password
-file { '/etc/ssh/sshd_config':
+file_line { 'Turn off passwd auth':
   ensure => present,
-  content => 'PasswordAuthentication no
-  IdentityFile ~/.ssh/holberton',
+  path   => '/etc/ssh/ssh_config',
+  line   => 'PasswordAuthentication no
+}
+
+file_line { 'Declare identity file':
+  path   => '/etc/ssh/ssh_config',
+  line   => 'IdentityFile ~/.ssh/holberton'
 }
