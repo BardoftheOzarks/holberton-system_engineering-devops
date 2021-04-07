@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Corrects a server
+service apache2 start
