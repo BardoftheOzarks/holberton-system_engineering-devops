@@ -3,8 +3,8 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo "Holberton School" | sudo tee /var/www/html/index.html
-old_line=""
-new_line="https://www.youtube.com/watch?v=QH2-TGUlwu4"
+old_line="^\tlocation \/ {"
+new_line="a\ \n\t/redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
 location="/etc/nginx/sites-enabled/default"
-sudo sed -i "s/$old_line/$new_line/" $location
-sudo service nginx start
+sudo sed -i "/$old_line/$new_line" $location
+sudo service nginx restart
