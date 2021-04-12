@@ -5,7 +5,7 @@ sudo apt-get -y install nginx
 echo "Holberton School" | sudo tee /var/www/html/index.html
 service nginx start
 old_line="^\tlocation \/ {"
-new_line="a\ \n\t/redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+new_line="a\ \t/redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
 location="/etc/nginx/sites-enabled/default"
 sudo sed -i "/$old_line/$new_line" $location
 sudo service nginx restart
