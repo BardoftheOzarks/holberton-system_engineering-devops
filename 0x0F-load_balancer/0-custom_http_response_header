@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installs formats a server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo service nginx stop
+location="/etc/nginx/sites-enabled/default"
+sudo sed -i '/^server {.*/a \\tadd_header X-Served-By '"${HOSTNAME}"';' $location
+sudo service nginx restart
