@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Switches server from Apache2 to Nginx as nginx user
+chown -R nginx:nginx /etc/nginx
+chmod u+rwx /etc/nginx/nginx.conf
+sed -i 's/80/8080/' /etc/nginx/sites-available/default
+pkill apache2
+sudo -u nginx service nginx restart
