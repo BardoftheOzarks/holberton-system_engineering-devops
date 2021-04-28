@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Archives a MySQL dump
-mysqldump -uroot -p "$1" --all-databases > backup.sql
+mysqldump -uroot -p"$1" --all-databases > backup.sql
 tar -czvf "$(date '+%d-%m-%Y').tar.gz" backup.sql
