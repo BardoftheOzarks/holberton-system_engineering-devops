@@ -10,7 +10,7 @@ def top_ten(subreddit):
                    headers={'user-agent': 'Excelsior'},
                    allow_redirects=False).json()
     if 'data' not in response:
-        return 0
+        print('None')
     data = response.get('data')
     children = data.get('children')
     for child in children:
