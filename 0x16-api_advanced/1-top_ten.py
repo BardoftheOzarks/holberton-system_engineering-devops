@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 '''queries the Reddit API'''
-from requests import get
+import json
+import requests
 
 
 def top_ten(subreddit):
-    '''returns number of subscribers'''
-    response = get('https://api.reddit.com/r/{}/top?limit=10'
-                   .format(subreddit),
-                   headers={'user-agent': 'Excelsior'},
-                   allow_redirects=False).json()
+    '''prints top ten posts'''
+    response = requests.get('https://api.reddit.com/r/{}/hot?limit=10'
+                            .format(subreddit),
+                            headers={'user-agent': 'Excelsior'},
+                            allow_redirects=False).json()
     if 'data' not in response:
         print('None')
+        return
     data = response.get('data')
     children = data.get('children')
     for child in children:
