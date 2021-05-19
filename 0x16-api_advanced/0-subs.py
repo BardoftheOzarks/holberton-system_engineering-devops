@@ -6,9 +6,9 @@ from requests import get
 def number_of_subscribers(subreddit):
     '''returns number of subscribers'''
     response = get('https://api.reddit.com/r/{}/about.json'
-            .format(subreddit),
-            headers={'user-agent': 'Excelsior'},
-            allow_redirects=False).json()
+                   .format(subreddit),
+                   headers={'user-agent': 'Excelsior'},
+                   allow_redirects=False).json()
     if 'data' not in response:
         return 0
     data = response.get('data')
