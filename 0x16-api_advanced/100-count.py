@@ -25,9 +25,11 @@ def count_words(subreddit, word_list, after=None, counts={}):
     for child in children:
         subdata = child.get('data')
         title = subdata.get('title')
-        title = title.split(' ')
+        title = title.split()
         for word in word_list:
-            counts[word] += title.count(word)
+            for title_word in title:
+                if word.lower() == title_word.lower():
+                    counts[word] += title.count(word)
     after = data.get('after')
     if after is None:
         results = []
